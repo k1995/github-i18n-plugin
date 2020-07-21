@@ -1,4 +1,5 @@
 const locales = {
+    // HomePage
     "sign in": "登录",
     "sign up": "注册",
     "team": "团队",
@@ -8,6 +9,17 @@ const locales = {
     "why github?": "为何选择GitHub",
     "built for developers": "专为开发者打造",
 
+    // Bottom
+    "terms": "服务条款",
+    "contact github": "联系 GitHub",
+    "privacy": "隐私",
+    "blog": "博客",
+    "help": "帮助",
+    "shop": "商店",
+    "status": "状态",
+    "training": "培训",
+
+    // Login & Register
     "username": "用户名",
     "email": "电子邮箱",
     "password": "密码",
@@ -24,7 +36,11 @@ const locales = {
     "including a number": "包括数字",
     "and a lowercase letter": "和小写字母",
     "learn more": "了解更多",
+    "confirm password to continue": "确认密码以继续",
+    "confirm password": "确认密码",
+    "tip:": "提示:",
 
+    // User home
     "pull requests": "拉取请求",
     "marketplace": "应用商城",
     "explore": "探索",
@@ -32,7 +48,17 @@ const locales = {
     "overview": "概况",
     "repositories": "仓库",
     "projects": "项目",
+    "recent activity": "最近动态",
+    "all activity": "所有动态",
+    "loading activity...": "加载动态中...",
+    "more": "更多",
+    "create an organization": "创建一个组织",
+    "explore more →": "探索更多",
+    "show more": "展示更多",
+    "working with a team?": "与团队合作?",
+    "github is built for collaboration. set up an organization to improve the way your team works together, and get access to more features.": "GitHub是为协作而创建的。 建立组织以改善团队合作的方式，并获得更多功能。",
 
+    // Search
     "language:": " 编程语言:",
     "type:": "类型:",
     "all": "所有",
@@ -41,6 +67,7 @@ const locales = {
     "find a repository…": "搜索项目…",
     "search or jump to…": "搜索或跳转到…",
 
+    // User & Organization
     "follow": "关注",
     "unfollow": "取消关注",
     "popular repositories": "热门仓库",
@@ -53,6 +80,7 @@ const locales = {
     "report abuse": "举报滥用",
     "organizations": "组织",
 
+    // Repository
     "new": "新建",
     "languages": "语言",
     "about": "关于",
@@ -83,13 +111,28 @@ const locales = {
     "contributors": "贡献者",
     "view license": "查看License",
 
+    // Settings
     "settings": "设置",
+    "personal settings": "个人设置",
+    "profile": "个人资料",
+    "account": "账号",
+    "account security": "账号安全",
+    "security log": "安全日志",
+    "security & analysis": "安全 & 分析",
+    "emails": "电子邮箱",
+    "billing": "账单",
+    "ssh and gpg keys": "SSH与GPG公钥",
+    "blocked users": "黑名单",
+    "saved replies": "保存的回复",
+    "applications": "应用",
+    "developer settings": "开发者设置",
     "rename": "重命名",
     "options": "选项",
     "branch": "分支",
     "branches": "分支",
     "tags": "标签",
 
+    // Create a Repository
     "a repository contains all project files, including the revision history. already have a project repository elsewhere?": "仓库包含项目中的所有文件，包括修订历史记录。在其他地方已有仓库？",
     "import a repository.": "导入仓库",
     "great repository names are short and memorable. need inspiration? how about": "好的仓库名称应该简单且容易记忆。需要灵感吗？这个怎么样：",
