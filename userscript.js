@@ -2,7 +2,7 @@
 // @name                GitHub Internationalization
 // @name:zh-CN          GitHub汉化插件
 // @namespace           https://github.com/k1995/github-i18n-plugin/
-// @version             0.1
+// @version             0.2
 // @description         Translate GitHub.com
 // @description:zh-CN   GitHub汉化插件
 // @author              k1995
@@ -115,7 +115,7 @@
             $("#translate-me").hide();
             // render result
             const text = res.responseText;
-            $(".repository-content .f4").append("<span style='font-size: small'>由 <a href='color:rgb(27, 149, 224);'>GitHub中文社区</a> 翻译👇</span>");
+            $(".repository-content .f4").append("<span style='font-size: small'>由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://www.githubs.cn'>GitHub中文社区</a> 翻译👇</span>");
             $(".repository-content .f4").append("<br/>");
             $(".repository-content .f4").append(text);
           } else {
