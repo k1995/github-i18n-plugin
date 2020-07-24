@@ -1,4 +1,44 @@
 const locales = {
+  // css selector
+  // css选择器
+  // 对于部分不方便直接替换的词条，需要通过jquery css选择器替换
+  css: [
+    {
+      // if key === "!html" replace target by: $(selector).html(replacement)
+      // else: $(selector).attr(key, replacement)
+      key: "!html",
+      selector: "a[aria-label='Pull requests you created']",
+      replacement: "请求拉取",
+    }
+  ],
+
+  // 词条
+  dict: {
+    // date
+    "jan": "1月",
+    "january": "1月",
+    "feb": "2月",
+    "february": "2月",
+    "mar": "3月",
+    "march": "3月",
+    "apr": "4月",
+    "april": "4月",
+    "may": "5月",
+    "jun": "6月",
+    "june": "6月",
+    "jul": "7月",
+    "july": "7月",
+    "aug": "8月",
+    "august": "8月",
+    "sep": "9月",
+    "september": "9月",
+    "oct": "10月",
+    "october": "10月",
+    "nov": "11月",
+    "november": "11月",
+    "dec": "12月",
+    "december": "12月",
+    
     // HomePage
     "sign in": "登录",
     "sign up": "注册",
@@ -8,6 +48,20 @@ const locales = {
     "search github": "搜索GitHub",
     "why github?": "为何选择GitHub",
     "built for developers": "专为开发者打造",
+    "refresh": "刷新",
+    "developers": "开发者",
+    "spoken language:": "自然语言",
+    "any": "所有",
+    "date range:": "时间范围",
+    "today": "今天",
+    "this week": "本周",
+    "this month": "本月",
+
+    // explore
+    "collections": "集合",
+    "trending": "趋势",
+    "events": "事件",
+    "github sponsors": "GitHub赞助",
 
     // Bottom
     "terms": "服务条款",
@@ -68,10 +122,16 @@ const locales = {
     "search or jump to…": "搜索或跳转到…",
 
     // User & Organization
+    "pinned": "置顶",
+    "followers": "粉丝",
+    "following": "正在关注",
+    "edit profile": "编辑个人资料",
     "follow": "关注",
     "unfollow": "取消关注",
+    "highlights": "高光时刻",
     "popular repositories": "热门仓库",
     "contribution activity": "贡献动态",
+    "show more activity": "加载更多动态",
     "people": "成员",
     "members": "成员",
     "top languages": "主要编程语言",
@@ -118,6 +178,7 @@ const locales = {
     "create a new release": "创建发行版",
     "no packages published": "未发布包",
     "publish your first package": "发布你的第一个包",
+    "edit repository details": "编辑仓库详情",
     "website": "网站",
     "topics": "话题",
     "(separate with spaces)": "（空格分隔）",
@@ -180,7 +241,16 @@ const locales = {
     // Create a Repository
     "a repository contains all project files, including the revision history. already have a project repository elsewhere?": "仓库包含项目中的所有文件，包括修订历史记录。在其他地方已有仓库？",
     "import a repository.": "导入仓库",
+    "import your project to github": "将你的仓库导入到GitHub",
+    "import all the files, including the revision history, from another version control system.": "从其他版本控制系统导入所有文件，包括修订历史记录。",
+    "your old repository’s clone url": "您的旧仓库的克隆地址",
+    "learn more about the types of": "了解更多关于",
+    "supported vcs.": "支持的版本系统",
+    "cancel": "取消",
+    "begin import": "开始导入",
+    "your new repository details": "你的新仓库详情",
     "great repository names are short and memorable. need inspiration? how about": "好的仓库名称应该简单且容易记忆。需要灵感吗？这个怎么样：",
     "anyone on the internet can see this repository. you choose who can commit.": "任何人都可以看到这个仓库，您可以选择谁能提交。",
     "you choose who can see and commit to this repository.": "您可以选择谁可以看和提交到该仓库。",
-  };
+  }
+};

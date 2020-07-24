@@ -17,7 +17,9 @@ GitHub.com 国际化插件。原链接：https://forum.githubs.cn/topic/5
 ![screenshot1](./images/screenshot1.png)
 
 ## 贡献
-中文词条在`locales/zh-CN.js`目录中，欢迎补充完善。
+该插件由[GitHub中文社区](https://www.githubs.cn/)提供，目前只翻译了部分常用词条，欢迎补充完善，中文词条在`locales/zh-CN.js`目录中。如有意见和疑问请到[原文](https://forum.githubs.cn/topic/5/)下留言。
+
+
 
 ## TODO
 - 目前只翻译部分内容，需要持续更新词条

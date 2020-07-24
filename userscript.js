@@ -2,19 +2,31 @@
 // @name                GitHub Internationalization
 // @name:zh-CN          GitHub汉化插件
 // @namespace           https://github.com/k1995/github-i18n-plugin/
-// @version             0.2
+// @version             0.5
 // @description         Translate GitHub.com
-// @description:zh-CN   GitHub汉化插件
+// @description:zh      GitHub汉化插件，包含人机翻译
+// @description:zh-CN   GitHub汉化插件，包含人机翻译
 // @author              k1995
 // @match               https://github.com/*
 // @grant               GM_xmlhttpRequest
-// @require             https://raw.githubusercontent.com/k1995/github-i18n-plugin/master/locales/zh-CN.js
+// @require https://greasyfork.org/scripts/407481-github-i18n-plugin-locales-zh-cn/code/github-i18n-plugin-locales-zh-CN.js?version=830277
+// @require             https://cdn.bootcdn.net/ajax/libs/timeago.js/4.0.2/timeago.full.min.js
 // @require             http://code.jquery.com/jquery-2.1.1.min.js
 // @updateURL           https://raw.githubusercontent.com/k1995/github-i18n-plugin/master/userscript.js
 // ==/UserScript==
 
 (function() {
   'use strict';
+
+  translateByCssSelector();
+  translateDesc();
+  traverseElement(document.body);
+  watchUpdate();
+
+  function translateRelativeTimeEl(el) {
+    const datetime = $(el).attr('datetime');
+    $(el).text(timeago.format(datetime, 'zh_CN'));
+  }
 
   function translateElement(el) {
     // Get the text field name
@@ -34,12 +46,8 @@
         .replace(/\xa0/g, ' ') // replace '&nbsp;'
         .replace(/\s{2,}/g, ' ');
 
-    if(txtSrc.startsWith("Sign")) {
-      console.log(key);
-      console.log(locales[key]);
-    }
-    if(locales[key]) {
-      el[k] = el[k].replace(txtSrc, locales[key])
+    if(locales.dict[key]) {
+      el[k] = el[k].replace(txtSrc, locales.dict[key])
     }
   }
 
@@ -57,6 +65,11 @@
     }
 
     for(const child of el.childNodes) {
+      if(el.tagName === "RELATIVE-TIME") {
+        translateRelativeTimeEl(el);
+        return;
+      }
+
       if(child.nodeType === Node.TEXT_NODE) {
         translateElement(child);
       }
@@ -126,7 +139,17 @@
     });
   }
 
-  traverseElement(document.body);
-  translateDesc();
-  watchUpdate();
+  function translateByCssSelector() {
+    if(locales.css) {
+      for(var css of locales.css) {
+        if($(css.selector).length > 0) {
+          if(css.key === '!html') {
+            $(css.selector).html(css.replacement);
+          } else {
+            $(css.selector).attr(css.key, css.replacement);
+          }
+        }
+      }
+    }
+  }
 })();
