@@ -1,15 +1,19 @@
 // ==UserScript==
 // @name                GitHub Internationalization
 // @name:zh-CN          GitHub汉化插件
+// @name:jp             GitHub日本語
 // @namespace           https://github.com/k1995/github-i18n-plugin/
-// @version             0.5
+// @version             0.6
 // @description         Translate GitHub.com
 // @description:zh      GitHub汉化插件，包含人机翻译
 // @description:zh-CN   GitHub汉化插件，包含人机翻译
+// @description:jp      GitHub日本語プラグイン
 // @author              k1995
 // @match               https://github.com/*
 // @grant               GM_xmlhttpRequest
-// @require https://greasyfork.org/scripts/407481-github-i18n-plugin-locales-zh-cn/code/github-i18n-plugin-locales-zh-CN.js?version=830277
+// @grant               GM_getResourceText
+// @resource            zh-CN https://raw.githubusercontent.com/k1995/github-i18n-plugin/master/locales/zh-CN.json
+// @resource            ja https://raw.githubusercontent.com/k1995/github-i18n-plugin/master/locales/ja.json
 // @require             https://cdn.bootcdn.net/ajax/libs/timeago.js/4.0.2/timeago.full.min.js
 // @require             http://code.jquery.com/jquery-2.1.1.min.js
 // @updateURL           https://raw.githubusercontent.com/k1995/github-i18n-plugin/master/userscript.js
@@ -18,14 +22,31 @@
 (function() {
   'use strict';
 
+  const SUPPORT_LANG = ["zh-CN", "ja"];
+  const lang = (navigator.language || navigator.userLanguage);
+  const locales = getLocales(lang)
+
   translateByCssSelector();
   translateDesc();
   traverseElement(document.body);
   watchUpdate();
 
+  function getLocales(lang) {
+    if(lang.startsWith("zh")) { // zh zh-TW --> zh-CN
+      lang = "zh-CN";
+    }
+    if(SUPPORT_LANG.includes(lang)) {
+      return JSON.parse(GM_getResourceText(lang));
+    }
+    return {
+      css: [],
+      dict: {}
+    };
+  }
+
   function translateRelativeTimeEl(el) {
     const datetime = $(el).attr('datetime');
-    $(el).text(timeago.format(datetime, 'zh_CN'));
+    $(el).text(timeago.format(datetime, lang.replace('-', '_')));
   }
 
   function translateElement(el) {

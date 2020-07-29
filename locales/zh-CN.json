@@ -1,20 +1,23 @@
-const locales = {
-  // css selector
-  // css选择器
-  // 对于部分不方便直接替换的词条，需要通过jquery css选择器替换
-  css: [
+{
+  "__comments-css": [
+    "css selector",
+    "css选择器",
+    "对于部分不方便直接替换的词条，需要通过jquery css选择器替换"
+  ],
+  "css": [
     {
-      // if key === "!html" replace target by: $(selector).html(replacement)
-      // else: $(selector).attr(key, replacement)
-      key: "!html",
-      selector: "a[aria-label='Pull requests you created']",
-      replacement: "请求拉取",
+      "_comments": [
+        "if key === '!html' replace target by: $(selector).html(replacement)",
+        "else: $(selector).attr(key, replacement)"
+      ],
+      "key": "!html",
+      "selector": "a[aria-label='Pull requests you created']",
+      "replacement": "请求拉取"
     }
   ],
 
-  // 词条
-  dict: {
-    // date
+  "dict": {
+    "__comments-1": "date",
     "jan": "1月",
     "january": "1月",
     "feb": "2月",
@@ -39,7 +42,7 @@ const locales = {
     "dec": "12月",
     "december": "12月",
     
-    // HomePage
+    "__comments-2": "HomePage",
     "sign in": "登录",
     "sign up": "注册",
     "team": "团队",
@@ -57,13 +60,13 @@ const locales = {
     "this week": "本周",
     "this month": "本月",
 
-    // explore
+    "__comments-3": "explore",
     "collections": "集合",
     "trending": "趋势",
     "events": "事件",
     "github sponsors": "GitHub赞助",
 
-    // Bottom
+    "__comments-4": "Bottom",  
     "terms": "服务条款",
     "contact github": "联系 GitHub",
     "privacy": "隐私",
@@ -73,7 +76,7 @@ const locales = {
     "status": "状态",
     "training": "培训",
 
-    // Login & Register
+    "__comments-5": "Login & Register",  
     "username": "用户名",
     "email": "电子邮箱",
     "password": "密码",
@@ -94,7 +97,22 @@ const locales = {
     "confirm password": "确认密码",
     "tip:": "提示:",
 
-    // User home
+    "__comments-6": "User home", 
+    "signed in as": "登录身份为",
+    "set status": "状态设置",
+    "new repository": "新建仓库",
+    "import repository": "导入仓库",
+    "new gist": "新建gist(代码片段)",
+    "new organization": "新建组织",
+    "new project": "新建项目",
+    "your profile": "个人资料",
+    "your repositories": "你的仓库",
+    "your projects": "你的项目",
+    "your stars": "你关注的仓库",
+    "your gists": "你的gist",
+    "upgrade": "升级",
+    "feature preview": "功能预览",
+    "sign out": "退出",
     "pull requests": "拉取请求",
     "marketplace": "应用商城",
     "explore": "探索",
@@ -112,7 +130,7 @@ const locales = {
     "working with a team?": "与团队合作?",
     "github is built for collaboration. set up an organization to improve the way your team works together, and get access to more features.": "GitHub是为协作而创建的。 建立组织以改善团队合作的方式，并获得更多功能。",
 
-    // Search
+    "__comments-7": "Search", 
     "language:": " 编程语言:",
     "type:": "类型:",
     "all": "所有",
@@ -121,7 +139,7 @@ const locales = {
     "find a repository…": "搜索项目…",
     "search or jump to…": "搜索或跳转到…",
 
-    // User & Organization
+    "__comments-8": "User & Organization",
     "pinned": "置顶",
     "followers": "粉丝",
     "following": "正在关注",
@@ -140,13 +158,13 @@ const locales = {
     "report abuse": "举报滥用",
     "organizations": "组织",
 
-    // Repository
+    "__comments-9": "Repository",
     "new": "新建",
     "languages": "语言",
     "about": "关于",
     "code": "代码",
     "explore repositories": "探索仓库",
-    "create a new repository": "新建仓库",
+    "create repository": "新建仓库",
     "owner": "拥有者",
     "repository name": "仓库名称",
     "description": "描述",
@@ -192,7 +210,7 @@ const locales = {
     "open with github desktop": "用GitHub桌面客户端打开",
     "download zip": "下载Zip压缩包",
 
-    // Repository settings
+    "__comments-10": "Repository settings",
     "danger zone": "危险区",
     "change repository visibility": "更改仓库可见性",
     "change visibility": "更改可见性",
@@ -217,7 +235,7 @@ const locales = {
     "integrations": "集成",
     "installed github apps": "安装GitHub应用",
 
-    // Settings
+    "__comments-11": "Repository settings",
     "settings": "设置",
     "personal settings": "个人设置",
     "profile": "个人资料",
@@ -238,7 +256,7 @@ const locales = {
     "branches": "分支",
     "tags": "标签",
 
-    // Create a Repository
+    "__comments-12": "Create a Repository",
     "a repository contains all project files, including the revision history. already have a project repository elsewhere?": "仓库包含项目中的所有文件，包括修订历史记录。在其他地方已有仓库？",
     "import a repository.": "导入仓库",
     "import your project to github": "将你的仓库导入到GitHub",
@@ -251,6 +269,6 @@ const locales = {
     "your new repository details": "你的新仓库详情",
     "great repository names are short and memorable. need inspiration? how about": "好的仓库名称应该简单且容易记忆。需要灵感吗？这个怎么样：",
     "anyone on the internet can see this repository. you choose who can commit.": "任何人都可以看到这个仓库，您可以选择谁能提交。",
-    "you choose who can see and commit to this repository.": "您可以选择谁可以看和提交到该仓库。",
+    "you choose who can see and commit to this repository.": "您可以选择谁可以看和提交到该仓库。"
   }
-};
+}
