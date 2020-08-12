@@ -11,6 +11,8 @@ GitHub.com 国际化插件。原链接：https://forum.githubs.cn/topic/5
 
 油猴安装完毕后，请点击[此链接](https://greasyfork.org/zh-CN/scripts/407485-github-internationalization)进入安装。
 
+### [GitHub日本語](https://greasyfork.org/ja/scripts/407485-github-internationalization)
+
 
 ## 效果截图
 

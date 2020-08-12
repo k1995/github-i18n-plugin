@@ -1,18 +1,18 @@
 // ==UserScript==
 // @name                GitHub Internationalization
 // @name:zh-CN          GitHub汉化插件
-// @name:jp             GitHub日本語
+// @name:ja             GitHub日本語
 // @namespace           https://github.com/k1995/github-i18n-plugin/
-// @version             0.6
+// @version             0.7
 // @description         Translate GitHub.com
 // @description:zh      GitHub汉化插件，包含人机翻译
 // @description:zh-CN   GitHub汉化插件，包含人机翻译
-// @description:jp      GitHub日本語プラグイン
+// @description:ja      GitHub日本語プラグイン
 // @author              k1995
 // @match               https://github.com/*
 // @grant               GM_xmlhttpRequest
 // @grant               GM_getResourceText
-// @resource            zh-CN https://raw.githubusercontent.com/k1995/github-i18n-plugin/master/locales/zh-CN.json
+// @resource            zh-CN https://www.githubs.cn/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/zh-CN.json
 // @resource            ja https://raw.githubusercontent.com/k1995/github-i18n-plugin/master/locales/ja.json
 // @require             https://cdn.bootcdn.net/ajax/libs/timeago.js/4.0.2/timeago.full.min.js
 // @require             http://code.jquery.com/jquery-2.1.1.min.js
@@ -86,7 +86,7 @@
     }
 
     for(const child of el.childNodes) {
-      if(el.tagName === "RELATIVE-TIME") {
+      if(["RELATIVE-TIME", "TIME-AGO"].includes(el.tagName)) {
         translateRelativeTimeEl(el);
         return;
       }
