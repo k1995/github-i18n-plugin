@@ -41,6 +41,14 @@
     "november": "11月",
     "dec": "12月",
     "december": "12月",
+
+    "inbox": "收件箱",
+    "saved": "已保存",
+    "done": "已办",
+    "unread": "未读",
+    "filters": "过滤",
+    "dismiss": "关闭",
+    "get started": "开始",
     
     "__comments-2": "HomePage",
     "sign in": "登录",
@@ -159,6 +167,12 @@
     "organizations": "组织",
 
     "__comments-9": "Repository",
+    "star": "星标",
+    "unstar": "取消星标",
+    "watch": "关注",
+    "unwatch": "取消关注",
+    "fork": "复刻",
+    "unfork": "取消复刻",
     "new": "新建",
     "languages": "语言",
     "about": "关于",
@@ -255,6 +269,11 @@
     "branch": "分支",
     "branches": "分支",
     "tags": "标签",
+
+    "public profile": "公开个人资料",
+    "name": "名字",
+    "public email": "公开邮箱",
+    "bio": "个人简介",
 
     "__comments-12": "Create a Repository",
     "a repository contains all project files, including the revision history. already have a project repository elsewhere?": "仓库包含项目中的所有文件，包括修订历史记录。在其他地方已有仓库？",
