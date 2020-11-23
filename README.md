@@ -25,3 +25,4 @@ GitHub.com 国际化插件。原链接：https://forum.githubs.cn/topic/5
 
 ## TODO
 - 目前只翻译部分内容，需要持续更新词条
+- 自动翻译"仓库描述"
