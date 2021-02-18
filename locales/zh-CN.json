@@ -315,7 +315,6 @@
     "preferred spoken language": "首选语言",
 
     "change username": "更改用户名",
-    "changing your username can have unintended side effects": "更改用户名可能会产生副作用",
     "export account data": "导出帐户数据",
     "start export": "开始导出",
     "successor settings": "设置继任者",
@@ -323,10 +322,15 @@
     "search by username, full name, or email address": "搜索用户名、全名、或邮件地址",
     "you have not designated a successor": "你还没有指定继承人",
     "delete account": "删除账户",
-    "once you delete your account": "一旦你删除了账号",
-    "there is no going back": "就没回头路",
-    "please be certain": "请谨慎决定！",
     "delete your account": "删除帐户",
+
+    "theme": "主题",
+    "go to your personal profile": "去我的个人资料",
+    "default to system": "系统默认",
+    "light": "亮",
+    "dark": "暗",
+    "preferred default emoji skin tone": "默认的表情肤色",
+    "update preference": "更新我的偏好",
 
 
     "__comments-12": "Create a Repository",
