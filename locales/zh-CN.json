@@ -332,6 +332,12 @@
     "preferred default emoji skin tone": "默认的表情肤色",
     "update preference": "更新我的偏好",
 
+    "change password": "更改密码",
+    "old password": "旧密码",
+    "new password": "新密码",
+    "confirm new password": "确认新密码",
+    "two-factor authentication": "双重身份验证",
+    "sessions": "会话",
 
     "__comments-12": "Create a Repository",
     "a repository contains all project files, including the revision history. already have a project repository elsewhere?": "仓库包含项目中的所有文件，包括修订历史记录。在其他地方已有仓库？",
