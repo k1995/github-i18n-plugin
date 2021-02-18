@@ -309,8 +309,17 @@
     "profile settings": "配置文件设置",
     "display pro badge": "显示Pro徽章",
     "contributions": "贡献",
+    "include private contributions on my profile": "在我的个人资料中显示私人共享",
     "github developer program": "GitHub 开发人员计划",
     "trending settings": "趋势设置",
+    "preferred spoken language": "首选语言",
+
+    "change username": "更改用户名",
+    "export account data": "导出帐户数据",
+    "successor settings": "设置继任者",
+    "search by username, full name, or email address": "搜索用户名、全名、或邮件地址",
+    "you have not designated a successor": "你还没有指定继承人",
+    "delete account": "删除账户",
 
     "__comments-12": "Create a Repository",
     "a repository contains all project files, including the revision history. already have a project repository elsewhere?": "仓库包含项目中的所有文件，包括修订历史记录。在其他地方已有仓库？",
