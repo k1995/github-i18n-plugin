@@ -428,6 +428,28 @@
     "view file": "查看文件",
     "delete file": "删除文件",
     
+    "__comments-15": "File code browsing and editing",   
+    "go to line": "跳转到行",
+    "copy path": "复制路径",
+    "copy permalink": "复制永久链接",
+    "edit this file": "编辑本文件",
+    "delete this file": "删除本文件",
+    "history": "历史",
+    "latest commit": "最新提交",
+    "view all branches": "查看所有分支",
+    "view all tags": "查看所有标签",
+    "nothing to show": "没有什么可显示",
+    "find or create a branch…": "查找或创建分支…",
+    "find a tag": "查找标签",
+    
+    "indent mode": "缩进模式",
+    "spaces": "空格",
+    "tabs": "tab",
+    "indent size": "缩进大小",
+    "line wrap mode": "换行模式",
+    "no wrap": "不换行",
+    "soft wrap": "软换行",
+      
     "__dict-end": "end"
   }
 }
