@@ -450,6 +450,21 @@
     "no wrap": "不换行",
     "soft wrap": "软换行",
       
+    "__comments-16": "Comment",   
+    "write": "撰写",
+    "preview": "预览",
+    "leave a comment": "留下一条评论",
+    "nothing to preview": "没有什么可预览",
+    "comment": "评论",
+    "comment on this commit": "评论这个提交",
+    "attach files by dragging & dropping, selecting or pasting them.": "通过拖放，选择和粘贴来附加文件。",
+    
+    "copy link": "复制链接",
+    "quote reply": "引用回复",
+    "report content": "举报内容",
+
+    "commented": "评论于",
+
     "__dict-end": "end"
   }
 }
