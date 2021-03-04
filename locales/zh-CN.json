@@ -42,14 +42,7 @@
     "dec": "12月",
     "december": "12月",
 
-    "inbox": "收件箱",
-    "saved": "已保存",
-    "done": "已办",
-    "unread": "未读",
-    "filters": "过滤",
-    "dismiss": "关闭",
-    "get started": "开始",
-    
+   
     "__comments-2": "HomePage",
     "sign in": "登录",
     "sign up": "注册",
@@ -465,6 +458,44 @@
 
     "commented": "评论于",
 
+    "__comments-16": "Notification",   
+    "inbox": "收件箱",
+    "saved": "已保存",
+    "done": "已完成",
+    "unread": "未读",
+    "filters": "过滤",
+    "dismiss": "关闭",
+    "get started": "开始",
+    "subscribe": "订阅",
+    "unsubscribe": "退订",
+    "group by:": "分组:",
+    "date": "日期",
+    "repository": "仓库",
+    "mark as read": "标记为已读",
+    "mark as unread": "标记为未读",
+    "clear out the clutter.": "清除混乱。",
+    "get the most out of your new inbox by quickly and easily marking all of your previously read notifications as done.": "快速轻松地将所有已阅读的通知标记为已完成，以充分利用新的收件箱。",
+    "manage notifications": "管理通知",
+    "notification settings": "通知设置",
+    "watched repositories": "关注的仓库",
+    "subscriptions": "订阅",
+    "watching": "关注",
+    "create new filter": "创建新规则",
+
+    "prev": "上一页",
+    "previous": "上一页",
+    "next": "下一页",
+
+    "change notification settings": "更改通知设置",
+    "you can change how you receive notifications from your account settings.": "您可以更改通过帐户设置接收通知的方式。",
+    "unwatch suggestions": "取消关注建议",
+    "these repositories may be causing unnecessary notifications.": "这些存储库可能导致不必要的通知。",
+    "unwatch all": "全部取消关注",
+    "custom": "自定义",
+    "ignoring": "忽略",
+    "ignore": "忽略",
+    "stop ignoring": "取消忽略",
+    
     "__dict-end": "end"
   }
 }
