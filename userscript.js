@@ -10,6 +10,7 @@
 // @description:ja      GitHub日本語プラグイン
 // @author              k1995
 // @match               https://github.com/*
+// @match               https://gist.github.com/*
 // @grant               GM_xmlhttpRequest
 // @grant               GM_getResourceText
 // @resource            zh-CN https://www.githubs.cn/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/zh-CN.json?v=20201119
