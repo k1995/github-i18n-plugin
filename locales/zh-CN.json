@@ -413,6 +413,21 @@
     "update public gist": "更新公开片段",
     "update secret gist": "更新私密片段",
 
+    "__comments-14": "Commit editing and browsing",    
+    "edit new file": "编辑新文件",
+    "cancel changes": "取消变更",
+    "edit file": "编辑文件",
+    "preview changes": "预览更改",
+    "commit new file": "提交新文件",
+    "commit changes": "提交更改",
+
+    "browse files": "浏览文件",
+    "unified": "同屏",
+    "split": "分屏",
+    "show comments": "显示评论",
+    "view file": "查看文件",
+    "delete file": "删除文件",
+    
     "__dict-end": "end"
   }
 }
