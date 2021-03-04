@@ -42,7 +42,7 @@
     "dec": "12月",
     "december": "12月",
 
-   
+
     "__comments-2": "HomePage",
     "sign in": "登录",
     "sign up": "注册",
@@ -67,7 +67,7 @@
     "events": "事件",
     "github sponsors": "GitHub赞助",
 
-    "__comments-4": "Bottom",  
+    "__comments-4": "Bottom",
     "terms": "服务条款",
     "contact github": "联系 GitHub",
     "privacy": "隐私",
@@ -77,7 +77,7 @@
     "status": "状态",
     "training": "培训",
 
-    "__comments-5": "Login & Register",  
+    "__comments-5": "Login & Register",
     "username": "用户名",
     "email": "电子邮箱",
     "password": "密码",
@@ -98,7 +98,7 @@
     "confirm password": "确认密码",
     "tip:": "提示:",
 
-    "__comments-6": "User home", 
+    "__comments-6": "User home",
     "signed in as": "登录身份为",
     "set status": "状态设置",
     "new repository": "新建仓库",
@@ -131,7 +131,7 @@
     "working with a team?": "与团队合作?",
     "github is built for collaboration. set up an organization to improve the way your team works together, and get access to more features.": "GitHub是为协作而创建的。 建立组织以改善团队合作的方式，并获得更多功能。",
 
-    "__comments-7": "Search", 
+    "__comments-7": "Search",
     "language:": " 编程语言:",
     "type:": "类型:",
     "all": "所有",
@@ -385,7 +385,7 @@
     "great repository names are short and memorable. need inspiration? how about": "好的仓库名称应该简单且容易记忆。需要灵感吗？这个怎么样：",
     "anyone on the internet can see this repository. you choose who can commit.": "任何人都可以看到这个仓库，您可以选择谁能提交。",
     "you choose who can see and commit to this repository.": "您可以选择谁可以看和提交到该仓库。",
-    
+
     "__comments-13": "All Gist",
     "starred gists": "我收藏的代码片段",
     "search…": "搜索代码片段…",
@@ -438,14 +438,14 @@
     "clone with git or checkout with svn using the repository’s web address.": "Git 克隆或 SVN 检出该仓库所使用的 web 地址。",
     "clone with an ssh key and passphrase from your github settings.": "使用 SSH 密钥克隆",
     "learn more about clone urls": "更多的克隆方法",
-    
+
     "editing": "编辑",
     "make secret": "转为私密",
     "make public": "转为公开",
     "update public gist": "更新公开片段",
     "update secret gist": "更新私密片段",
 
-    "__comments-14": "Commit editing and browsing",    
+    "__comments-14": "Commit editing and browsing",
     "edit new file": "编辑新文件",
     "cancel changes": "取消变更",
     "edit file": "编辑文件",
@@ -459,8 +459,8 @@
     "show comments": "显示评论",
     "view file": "查看文件",
     "delete file": "删除文件",
-    
-    "__comments-15": "File code browsing and editing",   
+
+    "__comments-15": "File code browsing and editing",
     "go to line": "跳转到行",
     "copy path": "复制路径",
     "copy permalink": "复制永久链接",
@@ -473,7 +473,7 @@
     "nothing to show": "没有什么可显示",
     "find or create a branch…": "查找或创建分支…",
     "find a tag": "查找标签",
-    
+
     "indent mode": "缩进模式",
     "spaces": "空格",
     "tabs": "tab",
@@ -481,8 +481,8 @@
     "line wrap mode": "换行模式",
     "no wrap": "不换行",
     "soft wrap": "软换行",
-      
-    "__comments-16": "Comment",   
+
+    "__comments-16": "Comment",
     "write": "撰写",
     "preview": "预览",
     "leave a comment": "留下一条评论",
@@ -490,14 +490,14 @@
     "comment": "评论",
     "comment on this commit": "评论这个提交",
     "attach files by dragging & dropping, selecting or pasting them.": "通过拖放，选择和粘贴来附加文件。",
-    
+
     "copy link": "复制链接",
     "quote reply": "引用回复",
     "report content": "举报内容",
 
     "commented": "评论于",
 
-    "__comments-16": "Notification",   
+    "__comments-16": "Notification",
     "inbox": "收件箱",
     "saved": "已保存",
     "done": "已完成",
