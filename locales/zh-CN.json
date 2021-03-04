@@ -200,6 +200,7 @@
     "default": "默认",
     "go to file": "文件查找",
     "used by": "使用者",
+    "contributor": "贡献者",
     "contributors": "贡献者",
     "view license": "查看License",
     "no releases published": "无发行版",
@@ -221,6 +222,7 @@
     "open with github desktop": "用GitHub桌面客户端打开",
     "download zip": "下载Zip压缩包",
     "this repository": "该仓库",
+    "forked from": "派生自",
 
     "__comments-compare": "Comparing changes",
     "comparing changes": "差异比对",
@@ -235,6 +237,7 @@
     "labels": "标签",
     "label": "标签",
     "milestones": "里程碑",
+    "milestone": "里程碑",
     "sort": "排序",
     "assignee": "受理人",
     "filter by who’s assigned": "按受理人筛选",
