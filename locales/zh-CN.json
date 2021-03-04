@@ -399,7 +399,7 @@
     "filename including extension…": "文件名 (包括扩展名)",
     "create secret gist": "创建私密片段",
     "secret gists are hidden by search engines but visible to anyone you give the url to.": "私密片段对搜索引擎不可见，对直接访问您分享的 url 可见。",
-    "create public gist": "创建公共片段",
+    "create public gist": "创建公开片段",
     "public gists are visible to everyone.": "公开片段对所有人可见。",
 
     "sort:": "排序:",
