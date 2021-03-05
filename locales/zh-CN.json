@@ -289,6 +289,7 @@
     "linked pull requests": "关联拉取请求",
     "submit new issue": "提交新议题",
     "new pull request": "创建拉取请求",
+    "close issue": "关闭议题",
 
     "__comments-10": "Repository settings",
     "danger zone": "危险区",
@@ -522,6 +523,7 @@
     "report content": "举报内容",
 
     "commented": "评论于",
+    "update comment": "更新评论",
 
     "__comments-16": "Notification",
     "inbox": "收件箱",
