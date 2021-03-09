@@ -451,6 +451,7 @@
     "you choose who can see and commit to this repository.": "您可以选择谁可以看和提交到该仓库。",
 
     "__comments-13": "All Gist",
+    "instantly share code, notes, and snippets.": "即时分享您的代码，笔记，片段，以及灵感。",
     "starred gists": "我标星的代码片段",
     "search…": "搜索代码片段…",
     "back to github": "返回到 GitHub",
@@ -464,7 +465,6 @@
     "view": "查看",
 
     "view your gists": "查看您的所有片段",
-    "Instantly share code, notes, and snippets.": "即时分享您的代码，笔记，片段，以及灵感。",
     "gist description…": "片段描述",
     "filename including extension…": "文件名 (包括扩展名)",
     "create secret gist": "创建私密片段",
@@ -648,7 +648,7 @@
     "with this many followers": "有多少粉丝",
     "with this many public repositories": "有多少公共仓库",
     "working in this language": "工作于何种语言",
-    "wiki options": "WiKi 选项",
+    "wiki options": "Wiki 选项",
 
     "__dict-end": "end"
   }
