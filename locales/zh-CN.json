@@ -377,6 +377,11 @@
     "submit new issue": "提交新议题",
     "new pull request": "创建拉取请求",
     "close issue": "关闭议题",
+    "reopen issue": "重新打开议题",
+    "lock conversation": "锁定对话",
+    "pin issue": "固定议题",
+    "transfer issue": "转移议题",
+    "delete issue": "刪除议题",
 
     "__comments-10": "Repository settings",
     "danger zone": "危险区",
