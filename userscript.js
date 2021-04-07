@@ -13,7 +13,7 @@
 // @match               https://gist.github.com/*
 // @grant               GM_xmlhttpRequest
 // @grant               GM_getResourceText
-// @resource            zh-CN https://www.githubs.cn/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/zh-CN.json?v=20201119
+// @resource            zh-CN https://www.githubs.cn/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/zh-CN.json?v=20210407
 // @resource            ja https://www.githubs.cn/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/ja.json
 // @require             https://cdn.bootcdn.net/ajax/libs/timeago.js/4.0.2/timeago.full.min.js
 // @require             https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js
@@ -74,10 +74,26 @@
 
   function shoudTranslateEl(el) {
     const blockIds = ["readme"];
+    const blockClass = ["CodeMirror"];
     const blockTags = ["CODE", "SCRIPT", "LINK", "IMG", "svg", "TABLE", "ARTICLE"];
 
-    return !(el.id && blockIds.includes(el.id))
-      && !(blockTags.includes(el.tagName));
+    if(blockTags.includes(el.tagName)) {
+      return false;
+    }
+
+    if(el.id && blockIds.includes(el.id)) {
+      return false;
+    }
+
+    if(el.classList) {
+      for(let clazz of blockClass) {
+        if(el.classList.contains(clazz)) {
+          return false;
+        }
+      }
+    }
+
+    return true;
   }
 
   function traverseElement(el) {
