@@ -3,7 +3,7 @@
 // @name:zh-CN          GitHub汉化插件
 // @name:ja             GitHub日本語
 // @namespace           https://github.com/k1995/github-i18n-plugin/
-// @version             0.12
+// @version             0.13
 // @description         Translate GitHub.com
 // @description:zh      GitHub汉化插件，包含人机翻译
 // @description:zh-CN   GitHub汉化插件，包含人机翻译
@@ -74,7 +74,10 @@
 
   function shoudTranslateEl(el) {
     const blockIds = ["readme", "wiki-content"];
-    const blockClass = ["CodeMirror"];
+    const blockClass = [
+      "CodeMirror",
+      "css-truncate" // 过滤文件目录
+    ];
     const blockTags = ["CODE", "SCRIPT", "LINK", "IMG", "svg", "TABLE", "ARTICLE", "PRE"];
 
     if(blockTags.includes(el.tagName)) {
