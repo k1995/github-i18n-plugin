@@ -76,7 +76,8 @@
     const blockIds = ["readme", "wiki-content"];
     const blockClass = [
       "CodeMirror",
-      "css-truncate" // 过滤文件目录
+      "css-truncate", // 过滤文件目录
+      "blob-code"
     ];
     const blockTags = ["CODE", "SCRIPT", "LINK", "IMG", "svg", "TABLE", "ARTICLE", "PRE"];
 
