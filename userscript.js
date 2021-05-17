@@ -73,11 +73,15 @@
   }
 
   function shoudTranslateEl(el) {
-    const blockIds = ["readme"];
-    const blockClass = ["CodeMirror"];
-    const blockTags = ["CODE", "SCRIPT", "LINK", "IMG", "svg", "TABLE", "ARTICLE"];
+    const blockIds = ["readme", "wiki-content"];
+    const blockClass = [
+      "CodeMirror",
+      "css-truncate", // 过滤文件目录
+      "blob-code"
+    ];
+    const blockTags = ["CODE", "SCRIPT", "LINK", "IMG", "svg", "TABLE", "ARTICLE", "PRE"];
     const blockItemprops = ["name"];
-    
+
     if(blockTags.includes(el.tagName)) {
       return false;
     }
