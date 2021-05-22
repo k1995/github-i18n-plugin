@@ -27,7 +27,8 @@
   const locales = getLocales(lang)
 
   translateByCssSelector();
-  translateDesc();
+  translateDesc(".repository-content .f4"); //仓库简介翻译
+  translateDesc(".gist-content [itemprop='about']"); // Gist 简介翻译
   traverseElement(document.body);
   watchUpdate();
 
@@ -158,12 +159,12 @@
   }
 
   // translate "about"
-  function translateDesc() {
-    $(".repository-content .f4").append("<br/>");
-    $(".repository-content .f4").append("<a id='translate-me' href='#' style='color:rgb(27, 149, 224);font-size: small'>翻译</a>");
+  function translateDesc(el) {
+    $(el).append("<br/>");
+    $(el).append("<a id='translate-me' href='#' style='color:rgb(27, 149, 224);font-size: small'>翻译</a>");
     $("#translate-me").click(function() {
       // get description text
-      const desc = $(".repository-content .f4")
+      const desc = $(el)
         .clone()
         .children()
         .remove()
@@ -183,9 +184,9 @@
             $("#translate-me").hide();
             // render result
             const text = res.responseText;
-            $(".repository-content .f4").append("<span style='font-size: small'>由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://www.githubs.cn'>GitHub中文社区</a> 翻译👇</span>");
-            $(".repository-content .f4").append("<br/>");
-            $(".repository-content .f4").append(text);
+            $(el).append("<span style='font-size: small'>由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://www.githubs.cn'>GitHub中文社区</a> 翻译👇</span>");
+            $(el).append("<br/>");
+            $(el).append(text);
           } else {
             alert("翻译失败");
           }
