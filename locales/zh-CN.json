@@ -423,6 +423,8 @@
     "draft": "草案",
     "ready for review": "准备审查",
     "marked pull request as ready for review.":"已将此拉取请求标记为准备审查。",
+    "checking for ability to merge automatically…": "检测自动合并的能力…",
+    "hang in there while we check the branch’s status.": "请等待，我们正在检查该分支的状态",
     "this branch has no conflicts with the base branch": "该分支与基本分支没有冲突",
     "merging can be performed automatically.": "可以自动进行合并。",
     "confirm merge": "确认合并",
