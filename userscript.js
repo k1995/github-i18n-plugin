@@ -3,7 +3,7 @@
 // @name:zh-CN          GitHub汉化插件
 // @name:ja             GitHub日本語
 // @namespace           https://github.com/k1995/github-i18n-plugin/
-// @version             0.14
+// @version             0.16
 // @description         Translate GitHub.com
 // @description:zh      GitHub汉化插件，包含人机翻译
 // @description:zh-CN   GitHub汉化插件，包含人机翻译
@@ -78,7 +78,9 @@
     const blockClass = [
       "CodeMirror",
       "css-truncate", // 过滤文件目录
-      "blob-code"
+      "blob-code",
+      "topic-tag", // 过滤标签,
+      "text-normal", // 过滤repo name, 复现：https://github.com/search?q=explore
     ];
     const blockTags = ["CODE", "SCRIPT", "LINK", "IMG", "svg", "TABLE", "ARTICLE", "PRE"];
     const blockItemprops = ["name"];
