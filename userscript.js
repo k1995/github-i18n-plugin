@@ -65,49 +65,63 @@
 
     const txtSrc = el[k].trim();
     const key = txtSrc.toLowerCase()
+      .replace(/\xa0/g, ' ') // replace '&nbsp;'
+      .replace(/\s{2,}/g, ' ');
+    if (locales.dict[key]) {
+      el[k] = el[k].replace(txtSrc, locales.dict[key])
+    }
+    translateElementAriaLabel(el)
+  }
+
+  function translateElementAriaLabel(el) {
+    if (el.ariaLabel) {
+      const k = 'ariaLabel'
+      const txtSrc = el[k].trim();
+      const key = txtSrc.toLowerCase()
         .replace(/\xa0/g, ' ') // replace '&nbsp;'
         .replace(/\s{2,}/g, ' ');
-
-    if(locales.dict[key]) {
-      el[k] = el[k].replace(txtSrc, locales.dict[key])
+      if (locales.dict[key]) {
+        el[k] = el[k].replace(txtSrc, locales.dict[key])
+      }
     }
   }
 
-  function shoudTranslateEl(el) {
+  function shouldTranslateEl(el) {
     const blockIds = ["readme", "wiki-content"];
     const blockClass = [
       "CodeMirror",
       "css-truncate", // 过滤文件目录
       "blob-code",
       "topic-tag", // 过滤标签,
-      "text-normal", // 过滤repo name, 复现：https://github.com/search?q=explore
+      // "text-normal", // 过滤repo name, 复现：https://github.com/search?q=explore
+      "repo-list"//过滤搜索结果项目,解决"text-normal"导致的有些文字不翻译的问题,搜索结果以后可以考虑单独翻译
     ];
     const blockTags = ["CODE", "SCRIPT", "LINK", "IMG", "svg", "TABLE", "ARTICLE", "PRE"];
     const blockItemprops = ["name"];
 
-    if(blockTags.includes(el.tagName)) {
+    if (blockTags.includes(el.tagName)) {
       return false;
     }
 
-    if(el.id && blockIds.includes(el.id)) {
+    if (el.id && blockIds.includes(el.id)) {
       return false;
     }
 
-    if(el.classList) {
-      for(let clazz of blockClass) {
-        if(el.classList.contains(clazz)) {
+    if (el.classList) {
+      for (let clazz of blockClass) {
+        if (el.classList.contains(clazz)) {
           return false;
         }
       }
     }
 
-    if(el.getAttribute) {
+    if (el.getAttribute) {
       let itemprops = el.getAttribute("itemprop");
-      if(itemprops) {
+      if (itemprops) {
         itemprops = itemprops.split(" ");
-        for(let itemprop of itemprops) {
+        for (let itemprop of itemprops) {
           console.log(itemprop)
-          if(blockItemprops.includes(itemprop)) {
+          if (blockItemprops.includes(itemprop)) {
             return false;
           }
         }
@@ -118,21 +132,22 @@
   }
 
   function traverseElement(el) {
-    if(!shoudTranslateEl(el)) {
+    translateElementAriaLabel(el)
+    if (!shouldTranslateEl(el)) {
       return
     }
 
-    for(const child of el.childNodes) {
-      if(["RELATIVE-TIME", "TIME-AGO"].includes(el.tagName)) {
+    for (const child of el.childNodes) {
+      if (["RELATIVE-TIME", "TIME-AGO"].includes(el.tagName)) {
         translateRelativeTimeEl(el);
         return;
       }
 
-      if(child.nodeType === Node.TEXT_NODE) {
+      if (child.nodeType === Node.TEXT_NODE) {
         translateElement(child);
       }
       else if(child.nodeType === Node.ELEMENT_NODE) {
-        if(child.tagName === "INPUT") {
+        if (child.tagName === "INPUT") {
           translateElement(child);
         } else {
           traverseElement(child);
