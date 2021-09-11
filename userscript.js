@@ -3,7 +3,7 @@
 // @name:zh-CN          GitHub汉化插件
 // @name:ja             GitHub日本語
 // @namespace           https://github.com/k1995/github-i18n-plugin/
-// @version             0.16
+// @version             0.17
 // @description         Translate GitHub.com
 // @description:zh      GitHub汉化插件，包含人机翻译
 // @description:zh-CN   GitHub汉化插件，包含人机翻译
@@ -26,11 +26,16 @@
   const lang = (navigator.language || navigator.userLanguage);
   const locales = getLocales(lang)
 
-  translateByCssSelector();
-  translateDesc(".repository-content .f4"); //仓库简介翻译
-  translateDesc(".gist-content [itemprop='about']"); // Gist 简介翻译
+  translateByCssSelector();  
   traverseElement(document.body);
   watchUpdate();
+
+  // 翻译描述
+  if(window.location.pathname.split('/').length == 3) {
+    translateDesc(".repository-content .f4"); //仓库简介翻译
+    translateDesc(".gist-content [itemprop='about']"); // Gist 简介翻译
+  }
+
 
   function getLocales(lang) {
     if(lang.startsWith("zh")) { // zh zh-TW --> zh-CN
