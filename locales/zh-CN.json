@@ -1106,6 +1106,20 @@
     "preview": "预览",
     "leave a comment": "留下评论",
     "nothing to preview": "没有什么可预览",
+
+    "add header text": "添加标题文本",
+    "add bold text <ctrl+b>": "添加粗体字 <ctrl+b>",
+    "add italic text <ctrl+i>": "添加斜体字 <ctrl+i>",
+    "insert a quote <ctrl+.>": "插入引用 <ctrl+.>",
+    "insert code <ctrl+e>": "插入代码 <ctrl+e>",
+    "add a link <ctrl+k>": "添加链接 <ctrl+k>",
+    "add a bulleted list <ctrl+shift+8>": "添加无序列表 <ctrl+shift+8>",
+    "add a numbered list <ctrl+shift+9>": "添加有序列表 <ctrl+shift+9>",
+    "add a task list": "添加任务列表",
+    "directly mention a user or team": "直接提到用户或团队",
+    "reference an issue, pull request, or discussion": "引用问题，拉取请求，或讨论",
+    "insert a reply": "插入回复",
+
     "comment": "评论",
     "comment on this commit": "评论",
     "attach files by dragging & dropping, selecting or pasting them.": "通过拖放，选择和粘贴来附加文件。",
@@ -1113,6 +1127,7 @@
     "filter replies…": "筛选回复",
     "create a new saved reply…": "创建新的保存的回复…",
     "add single comment": "添加评论",
+    "start a review": "开始审查",
 
     "copy link": "复制链接",
     "quote reply": "引用回复",
