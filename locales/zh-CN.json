@@ -711,6 +711,7 @@
     "sponsorship log": "赞助日志",
     "emails": "电子邮箱",
     "billing": "账单",
+    "scheduled reminders": "定时提醒",
     "ssh and gpg keys": "SSH 与 GPG 公钥",
     "saved replies": "保存的回复",
     "applications": "应用",
@@ -942,6 +943,10 @@
     "any applications or scripts using this token will no longer be able to access the github api. you cannot undo this action.": "任何使用此令牌的应用程序或脚本将无法再访问 GitHub API。您无法撤消此操作。",
     "i understand, delete this token": "我明白了，依然删除该令牌。",
 
+    "regenerate personal access token": "重新生成个人访问令牌",
+    "submitting this form will generate a new token. be aware that any scripts or applications using this token will need to be updated.": "提交此表单将产生一个新的令牌。请注意，任何使用该令牌的脚本或应用程序将需要更新。",
+    "regenerate token": "重新生成令牌",
+
     "__comments-12": "Create a Repository",
     "create a repository": "创建一个新仓库",
     "a repository contains all project files, including the revision history. already have a project repository elsewhere?": "仓库包含项目中的所有文件，包括修订历史记录。在其他地方已有仓库？",
@@ -1069,7 +1074,6 @@
     "view fork": "浏览复刻",
 
     "__comments-15": "File code browsing and editing",
-    "jump to": "跳转到",
     "code definitions": "代码定义",
     "filter definitions": "筛选定义",
     "no definitions found in this file.": "本文件中没有发现任何定义。",
@@ -1144,6 +1148,7 @@
     "this edit’s content will no longer be visible": "此修改的内容将不再可见",
 
     "__comments-17": "Notification",
+    "you have unread notifications": "您有未读通知",
     "inbox": "收件箱",
     "saved": "已保存",
     "save": "保存",
@@ -1156,6 +1161,7 @@
     "unsubscribe": "退订",
     "group by:": "分组:",
     "date": "日期",
+    "filter notifications": "筛选通知",
     "repository": "仓库",
     "mark as read": "标记为已读",
     "mark as unread": "标记为未读",
@@ -1328,7 +1334,6 @@
 
     "view runs": "查看工作流程",
 
-    "no results matched your search.": "没有与您的搜索相符的结果。",
     "try broadening your search filters.": "尝试扩大您的搜索过滤器。",
 
     "__comments-Release": "发行版",
@@ -1378,7 +1383,6 @@
     ".": "。",
     "organization": "组织",
     "filter by organization or owner": "按组织或所有者过滤",
-    "filter organizations": "按组织筛选",
     "filter organizations": "按组织筛选",
     "new label": "新标签",
     "create label": "创建标签",
