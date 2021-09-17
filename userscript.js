@@ -99,7 +99,8 @@
       "blob-code",
       "topic-tag", // 过滤标签,
       // "text-normal", // 过滤repo name, 复现：https://github.com/search?q=explore
-      "repo-list"//过滤搜索结果项目,解决"text-normal"导致的有些文字不翻译的问题,搜索结果以后可以考虑单独翻译
+      "repo-list",//过滤搜索结果项目,解决"text-normal"导致的有些文字不翻译的问题,搜索结果以后可以考虑单独翻译
+      "breadcrumb", //过滤位置栏
     ];
     const blockTags = ["CODE", "SCRIPT", "LINK", "IMG", "svg", "TABLE", "ARTICLE", "PRE"];
     const blockItemprops = ["name"];
