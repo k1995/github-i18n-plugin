@@ -15,6 +15,14 @@
       "replacement": "请求拉取"
     }
   ],
+  "regexp": {
+    "title": [
+      ["pull requests", "拉取请求"],
+      ["actions", "操作"],
+      ["revisions","修订"],
+      ["_regexp_end", "end"]
+    ]
+  },
 
   "dict": {
     "__comments-1": "date",
