@@ -74,6 +74,22 @@
       .replace(/\s{2,}/g, ' ');
     if (locales.dict[key]) {
       el[k] = el[k].replace(txtSrc, locales.dict[key])
+    } else {
+      // 正则翻译(实验)
+      var str; // 翻译结果
+      var res; // 正则数组
+
+      var rePagePath=locales.rePagePath // URL匹配规则
+      var child = document.URL.replace(new RegExp(rePagePath), "$1");
+      res = locales.regexp[child];
+      if (res) {
+          for (var i = 0, len = res.length; i < len; i++) {
+              str = key.replace(new RegExp(res[i][0]), res[i][1]);
+              if (str !== key) {
+                  el[k] = str
+              }
+          }
+      }
     }
     translateElementAriaLabel(el)
   }

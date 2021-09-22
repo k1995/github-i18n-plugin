@@ -15,6 +15,12 @@
       "replacement": "请求拉取"
     }
   ],
+  "rePagePath": ".*(settings/admin|settings/appearance)",
+  "regexp": {
+    "settings/admin":[
+      ["by clicking \"add successor\" below, i acknowledge that i am the owner of the([^@]+@[^\n]+) account, and am authorizing github to transfer content within that account to my github successor,", "通过点击下面的 \"添加继任者\"，我承认我是 $1 账户的所有者，并授权 GitHub 将该账户内的内容转移给我的 GitHub 继任者。"]
+    ]
+  },
 
   "dict": {
     "__comments-1": "date",
