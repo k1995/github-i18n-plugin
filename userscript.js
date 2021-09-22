@@ -62,26 +62,22 @@
       .replace(/\s{2,}/g, ' ');
     if (locales.dict[key]) {
       document.title = locales.dict[key]
-      return
-    }
-
-    // 正则翻译(实验)
-    var str; // 翻译结果
-    var res; // 正则数组
-    res = locales.regexp.title;
-    if (res) {
-        for (var i = 0, len = res.length; i < len; i++) {
-            str = key.replace(new RegExp(res[i][0]), res[i][1]);
-            if (str !== key) {
-                document.title = str
-            }
-        }
+    } else {
+      // 正则翻译(实验)
+      var str; // 翻译结果
+      var res; // 正则数组
+      res = locales.regexp.title;
+      if (res) {
+          for (var i = 0, len = res.length; i < len; i++) {
+              str = key.replace(new RegExp(res[i][0]), res[i][1]);
+              if (str !== key) {
+                  document.title = str
+              }
+          }
+      }
     }
   }
 
-  /**
-   * 时间节点翻译
-   */
   function translateRelativeTimeEl(el) {
     const datetime = $(el).attr('datetime');
     $(el).text(timeago.format(datetime, lang.replace('-', '_')));
