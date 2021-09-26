@@ -68,12 +68,14 @@
       k = 'data';
     }
 
-    const txtSrc = el[k].trim();
-    const key = txtSrc.toLowerCase()
-      .replace(/\xa0/g, ' ') // replace '&nbsp;'
-      .replace(/\s{2,}/g, ' ');
-    if (locales.dict[key]) {
-      el[k] = el[k].replace(txtSrc, locales.dict[key])
+    if (isNaN(el[k])){
+      const txtSrc = el[k].trim();
+      const key = txtSrc.toLowerCase()
+        .replace(/\xa0/g, ' ') // replace '&nbsp;'
+        .replace(/\s{2,}/g, ' ');
+      if (locales.dict[key]) {
+        el[k] = el[k].replace(txtSrc, locales.dict[key])
+      }
     }
     translateElementAriaLabel(el)
   }
