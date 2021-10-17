@@ -97,7 +97,7 @@
     const blockIds = ["readme", "wiki-content"];
     const blockClass = [
       "CodeMirror",
-      "css-truncate", // 过滤文件目录
+      "js-navigation-container", // 过滤文件目录
       "blob-code",
       "topic-tag", // 过滤标签,
       // "text-normal", // 过滤repo name, 复现：https://github.com/search?q=explore
