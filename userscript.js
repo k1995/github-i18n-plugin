@@ -3,7 +3,7 @@
 // @name:zh-CN          GitHub汉化插件
 // @name:ja             GitHub日本語
 // @namespace           https://github.com/k1995/github-i18n-plugin/
-// @version             0.17
+// @version             0.20
 // @description         Translate GitHub.com
 // @description:zh      GitHub汉化插件，包含人机翻译
 // @description:zh-CN   GitHub汉化插件，包含人机翻译
@@ -13,7 +13,7 @@
 // @match               https://gist.github.com/*
 // @grant               GM_xmlhttpRequest
 // @grant               GM_getResourceText
-// @resource            zh-CN https://www.githubs.cn/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/zh-CN.json?v=20210407
+// @resource            zh-CN https://www.githubs.cn/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/zh-CN.json?v=20211022
 // @resource            ja https://www.githubs.cn/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/ja.json
 // @require             https://cdn.bootcss.com/timeago.js/4.0.2/timeago.full.min.js
 // @require             https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js
@@ -94,7 +94,7 @@
   }
 
   function shouldTranslateEl(el) {
-    const blockIds = ["readme", "wiki-content"];
+    const blockIds = ["readme"];
     const blockClass = [
       "CodeMirror",
       "js-navigation-container", // 过滤文件目录
@@ -104,6 +104,7 @@
       "repo-list",//过滤搜索结果项目,解决"text-normal"导致的有些文字不翻译的问题,搜索结果以后可以考虑单独翻译
       "js-path-segment","final-path", //过滤文件位置栏
       "d-sm-block", //过滤目录位置栏
+	  "markdown-body" // 过滤wiki页面
     ];
     const blockTags = ["CODE", "SCRIPT", "LINK", "IMG", "svg", "TABLE", "ARTICLE", "PRE"];
     const blockItemprops = ["name"];
