@@ -102,9 +102,8 @@
       "topic-tag", // 过滤标签,
       // "text-normal", // 过滤repo name, 复现：https://github.com/search?q=explore
       "repo-list",//过滤搜索结果项目,解决"text-normal"导致的有些文字不翻译的问题,搜索结果以后可以考虑单独翻译
-      "js-path-segment","final-path", //过滤文件位置栏
-      "d-sm-block", //过滤目录位置栏
-	  "markdown-body" // 过滤wiki页面
+      "js-path-segment","final-path", //过滤目录,文件位置栏
+      "markdown-body" // 过滤wiki页面
     ];
     const blockTags = ["CODE", "SCRIPT", "LINK", "IMG", "svg", "TABLE", "ARTICLE", "PRE"];
     const blockItemprops = ["name"];
