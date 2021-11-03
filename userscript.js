@@ -146,6 +146,19 @@
       return
     }
 
+    if (el.childNodes.length === 0) {
+      if (el.nodeType === Node.TEXT_NODE) {
+        translateElement(el);
+        return;
+      }
+      else if(el.nodeType === Node.ELEMENT_NODE) {
+        if (el.tagName === "INPUT") {
+          translateElement(el);
+          return;
+        }
+      }
+    }
+
     for (const child of el.childNodes) {
       if (["RELATIVE-TIME", "TIME-AGO"].includes(el.tagName)) {
         translateRelativeTimeEl(el);
@@ -171,8 +184,8 @@
     const m = window.MutationObserver || window.WebKitMutationObserver;
     const observer = new m(function (mutations, observer) {
       for(let mutationRecord of mutations) {
-        for(let node of mutationRecord.addedNodes) {
-          traverseElement(node);
+        if (mutationRecord.addedNodes || mutationRecord.type === 'attributes') {
+          traverseElement(mutationRecord.target);
         }
       }
     });
@@ -181,6 +194,7 @@
       subtree: true,
       characterData: true,
       childList: true,
+      attributeFilter: ['value', 'placeholder', 'aria-label', 'data', 'data-confirm'], // 仅观察特定属性变化(试验测试阶段，有问题再恢复)
     });
   }
 
