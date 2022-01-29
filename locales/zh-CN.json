@@ -282,8 +282,8 @@
     "star": "星标",
     "unstar": "已加星标",
 
-    "watch": "订阅",
-    "unwatch": "取消订阅",
+    "watch": "关注",
+    "unwatch": "取消关注",
     "participating and @mentions": "参与和 @提及",
     "only receive notifications from this repository when participating or @mentioned.": "仅在参与或 @提及时接收来自此仓库的通知。",
     "all activity": "所有活动",
