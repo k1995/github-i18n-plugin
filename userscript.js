@@ -3,7 +3,7 @@
 // @name:zh-CN          GitHub汉化插件
 // @name:ja             GitHub日本語
 // @namespace           https://github.com/k1995/github-i18n-plugin/
-// @version             0.20
+// @version             0.21
 // @description         Translate GitHub.com
 // @description:zh      GitHub汉化插件，包含人机翻译
 // @description:zh-CN   GitHub汉化插件，包含人机翻译
@@ -13,10 +13,11 @@
 // @match               https://gist.github.com/*
 // @grant               GM_xmlhttpRequest
 // @grant               GM_getResourceText
-// @resource            zh-CN https://www.githubs.cn/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/zh-CN.json?v=20211022
+// @resource            zh-CN https://www.githubs.cn/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/zh-CN.json?v=20220131
 // @resource            ja https://www.githubs.cn/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/ja.json
-// @require             https://cdn.bootcss.com/timeago.js/4.0.2/timeago.full.min.js
-// @require             https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js
+// @require             https://cdn.staticfile.org/timeago.js/4.0.2/timeago.min.js
+// @require             https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js
+// @license MIT
 // ==/UserScript==
 
 (function() {
