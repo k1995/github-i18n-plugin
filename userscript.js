@@ -15,8 +15,8 @@
 // @grant               GM_getResourceText
 // @resource            zh-CN https://www.githubs.cn/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/zh-CN.json?v=20211022
 // @resource            ja https://www.githubs.cn/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/ja.json
-// @require             https://cdn.bootcss.com/timeago.js/4.0.2/timeago.full.min.js
-// @require             https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js
+// @require             https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.full.min.js
+// @require             https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
 // ==/UserScript==
 
 (function() {
