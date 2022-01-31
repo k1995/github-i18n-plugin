@@ -3,7 +3,7 @@
 // @name:zh-CN          GitHub汉化插件
 // @name:ja             GitHub日本語
 // @namespace           https://github.com/k1995/github-i18n-plugin/
-// @version             0.21
+// @version             0.22
 // @description         Translate GitHub.com
 // @description:zh      GitHub汉化插件，包含人机翻译
 // @description:zh-CN   GitHub汉化插件，包含人机翻译
@@ -53,7 +53,7 @@
 
   function translateRelativeTimeEl(el) {
     const datetime = $(el).attr('datetime');
-    $(el).text(timeago.format(datetime, lang.replace('-', '_')));
+    //$(el).text(timeago.format(datetime, lang.replace('-', '_')));
   }
 
   function translateElement(el) {
