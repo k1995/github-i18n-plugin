@@ -3,7 +3,7 @@
 // @name:zh-CN          GitHub汉化插件
 // @name:ja             GitHub日本語
 // @namespace           https://github.com/k1995/github-i18n-plugin/
-// @version             0.22
+// @version             0.23
 // @description         Translate GitHub.com
 // @description:zh      GitHub汉化插件，包含人机翻译
 // @description:zh-CN   GitHub汉化插件，包含人机翻译
@@ -27,7 +27,7 @@
   const lang = (navigator.language || navigator.userLanguage);
   const locales = getLocales(lang)
 
-  translateByCssSelector();  
+  translateByCssSelector();
   traverseElement(document.body);
   watchUpdate();
 
@@ -130,7 +130,6 @@
       if (itemprops) {
         itemprops = itemprops.split(" ");
         for (let itemprop of itemprops) {
-          console.log(itemprop)
           if (blockItemprops.includes(itemprop)) {
             return false;
           }
@@ -184,10 +183,15 @@
   function watchUpdate() {
     const m = window.MutationObserver || window.WebKitMutationObserver;
     const observer = new m(function (mutations, observer) {
+      var reTrans = false;
       for(let mutationRecord of mutations) {
         if (mutationRecord.addedNodes || mutationRecord.type === 'attributes') {
-          traverseElement(mutationRecord.target);
+          reTrans = true;
+          // traverseElement(mutationRecord.target);
         }
+      }
+      if(reTrans) {
+          traverseElement(document.body);
       }
     });
 
