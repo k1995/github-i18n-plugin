@@ -635,6 +635,7 @@
     "awaiting review from you or your team": "等待您或您的团队的审查",
     "awaiting review from you specifically": "特别等待您审查",
     "assignees": "受理人",
+    "no one assigned": "未分配",
     "confirmed": "已确认",
     "we couldn’t find anything!": "这里空空如也！",
     "linked pull requests": "关联拉取请求",
