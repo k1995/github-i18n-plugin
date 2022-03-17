@@ -119,7 +119,7 @@
     }
 
     if(el.classList) {
-      for (let clazz of blockClass) {
+      for(let clazz of blockClass) {
         if(el.classList.contains(clazz)) {
           return false;
         }
@@ -130,7 +130,7 @@
       let itemprops = el.getAttribute("itemprop");
       if(itemprops) {
         itemprops = itemprops.split(" ");
-        for (let itemprop of itemprops) {
+        for(let itemprop of itemprops) {
           if(blockItemprops.includes(itemprop)) {
             return false;
           }
@@ -160,7 +160,7 @@
       }
     }
 
-    for (const child of el.childNodes) {
+    for(const child of el.childNodes) {
       if(["RELATIVE-TIME", "TIME-AGO"].includes(el.tagName)) {
         translateRelativeTimeEl(el);
         return;
