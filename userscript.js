@@ -20,7 +20,7 @@
 // @license MIT
 // ==/UserScript==
 
-(function() {
+(function () {
   'use strict';
 
   const SUPPORT_LANG = ["zh-CN", "ja"];
@@ -29,7 +29,7 @@
 
   translateByCssSelector();
   traverseElement(document.body);
-  
+
   // 翻译描述
   if(window.location.pathname.split('/').length == 3) {
     translateDesc(".repository-content .f4"); //仓库简介翻译
@@ -70,7 +70,7 @@
       k = 'data';
     }
 
-    if(isNaN(el[k])){
+    if(isNaN(el[k])) {
       const txtSrc = el[k].trim();
       const key = txtSrc.toLowerCase()
         .replace(/\xa0/g, ' ') // replace '&nbsp;'
@@ -103,8 +103,8 @@
       "blob-code",
       "topic-tag", // 过滤标签,
       // "text-normal", // 过滤repo name, 复现：https://github.com/search?q=explore
-      "repo-list",//过滤搜索结果项目,解决"text-normal"导致的有些文字不翻译的问题,搜索结果以后可以考虑单独翻译
-      "js-path-segment","final-path", //过滤目录,文件位置栏
+      "repo-list", //过滤搜索结果项目,解决"text-normal"导致的有些文字不翻译的问题,搜索结果以后可以考虑单独翻译
+      "js-path-segment", "final-path", //过滤目录,文件位置栏
       "markdown-body" // 过滤wiki页面
     ];
     const blockTags = ["CODE", "SCRIPT", "LINK", "IMG", "svg", "TABLE", "ARTICLE", "PRE"];
@@ -151,8 +151,7 @@
       if(el.nodeType === Node.TEXT_NODE) {
         translateElement(el);
         return;
-      }
-      else if(el.nodeType === Node.ELEMENT_NODE) {
+      } else if(el.nodeType === Node.ELEMENT_NODE) {
         if(el.tagName === "INPUT") {
           translateElement(el);
           return;
@@ -160,7 +159,7 @@
       }
     }
 
-    for(const child of el.childNodes) {
+    for(let child of el.childNodes) {
       if(["RELATIVE-TIME", "TIME-AGO"].includes(el.tagName)) {
         translateRelativeTimeEl(el);
         return;
@@ -168,15 +167,12 @@
 
       if(child.nodeType === Node.TEXT_NODE) {
         translateElement(child);
-      }
-      else if(child.nodeType === Node.ELEMENT_NODE) {
+      } else if(child.nodeType === Node.ELEMENT_NODE) {
         if(child.tagName === "INPUT") {
           translateElement(child);
         } else {
           traverseElement(child);
         }
-      } else {
-        // pass
       }
     }
   }
@@ -189,10 +185,9 @@
       for(let mutationRecord of mutations) {
         if(mutationRecord.type === 'attributes') {
           elements.add(mutationRecord.target);
-        }
-        else if(mutationRecord.addedNodes){
-          for(let node of mutationRecord.addedNodes){
-              elements.add(node);
+        } else if(mutationRecord.addedNodes) {
+          for(let node of mutationRecord.addedNodes) {
+            elements.add(node);
           }
         }
       }
@@ -219,7 +214,7 @@
   function translateDesc(el) {
     $(el).append("<br/>");
     $(el).append("<a id='translate-me' href='#' style='color:rgb(27, 149, 224);font-size: small'>翻译</a>");
-    $("#translate-me").click(function() {
+    $("#translate-me").click(function () {
       // get description text
       const desc = $(el)
         .clone()
@@ -235,8 +230,8 @@
 
       GM_xmlhttpRequest({
         method: "GET",
-        url: `https://www.githubs.cn/translate?q=`+ encodeURIComponent(desc),
-        onload: function(res) {
+        url: `https://www.githubs.cn/translate?q=` + encodeURIComponent(desc),
+        onload: function (res) {
           if(res.status === 200) {
             $("#translate-me").hide();
             // render result
