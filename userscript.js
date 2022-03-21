@@ -3,7 +3,7 @@
 // @name:zh-CN          GitHub汉化插件
 // @name:ja             GitHub日本語
 // @namespace           https://github.com/k1995/github-i18n-plugin/
-// @version             0.23
+// @version             0.24
 // @description         Translate GitHub.com
 // @description:zh      GitHub汉化插件，包含人机翻译
 // @description:zh-CN   GitHub汉化插件，包含人机翻译
@@ -53,7 +53,7 @@
 
   function translateRelativeTimeEl(el) {
     const datetime = $(el).attr('datetime');
-    //$(el).text(timeago.format(datetime, lang.replace('-', '_')));
+    $(el).text(timeago.format(datetime, lang.replace('-', '_')));
   }
 
   function translateElement(el) {
@@ -182,6 +182,12 @@
 
   function watchUpdate() {
     const m = window.MutationObserver || window.WebKitMutationObserver;
+    const config = {
+      subtree: true,
+      characterData: true,
+      childList: true,
+      attributeFilter: ['value', 'placeholder', 'aria-label', 'data', 'data-confirm'], // 仅观察特定属性变化(试验测试阶段，有问题再恢复)
+    };
     const observer = new m(function (mutations, observer) {
       var reTrans = false;
       for(let mutationRecord of mutations) {
@@ -191,16 +197,13 @@
         }
       }
       if(reTrans) {
+          observer.disconnect();
           traverseElement(document.body);
+          observer.observe(document.body, config);
       }
     });
 
-    observer.observe(document.body, {
-      subtree: true,
-      characterData: true,
-      childList: true,
-      attributeFilter: ['value', 'placeholder', 'aria-label', 'data', 'data-confirm'], // 仅观察特定属性变化(试验测试阶段，有问题再恢复)
-    });
+    observer.observe(document.body, config);
   }
 
   // translate "about"
