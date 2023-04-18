@@ -214,6 +214,9 @@
     "overview": "概况",
     "repositories": "仓库",
     "projects": "项目",
+    "jump right in": "加入",
+    "no open projects": "没有任何打开的项目",
+    "no projects have been opened yet.": "目前没有被打开的项目。",
     "customize your pins": "自定义您的置顶项目",
     "contribution settings": "贡献设置",
     "learn how we count contributions": "了解我们如何计算贡献",
@@ -280,6 +283,14 @@
     "achievements": "成就",
 
     "__comments-9": "Repository",
+    
+    "lists": "列表",
+    "create list": "创建一个列表",
+    
+    "starred repositories": "标星的仓库",
+    "starred topics": "标星的话题",
+    "see all starred topics": "查看全部标星话题",
+
     "star": "星标",
     "unstar": "已加星标",
 
@@ -348,6 +359,9 @@
     "create a new release": "创建发行版",
     "no packages published": "未发布包",
     "publish your first package": "发布您的第一个包",
+    "get started with github packages": "开始使用 GitHub 包",
+    "safely publish packages, store your packages alongside your code, and share your packages privately with your team.": "安全地发布包，将包与代码一起存储，并与您的团队共享私有包。",
+    "choose a registry": "选择一个包托管服务",
     "edit repository details": "编辑仓库详情",
     "website": "网站",
     "topics": "话题",
