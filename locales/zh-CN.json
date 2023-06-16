@@ -1804,6 +1804,18 @@
 
     "successfully fetched and fast-forwarded from upstream": "",
     "branch created.": "分支已成功创建。",
+
+    "Choose a template": "选择模板",
+    "Start a codespace from a template and get to developing with the power of a virtual machine in the cloud.": "从模板启动代码空间，并利用云虚拟机的强大功能进行开发。",
+    "Explore quick start templates": "探索快速启动模板",
+    "See all": "查看全部",
+    "Go to docs": "查看文档",
+    "New codespace": "新建代码空间",
+    "Use this template": "使用此模板",
+
+    "Extend GitHub": "拓展GitHub",
+    "Find tools to improve your workflow": "寻找改进工作流程的工具",
+
     "__dict-end": "end"
   }
 }
