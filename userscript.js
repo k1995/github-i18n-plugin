@@ -3,7 +3,7 @@
 // @name:zh-CN          GitHub汉化插件
 // @name:ja             GitHub日本語
 // @namespace           https://github.com/k1995/github-i18n-plugin/
-// @version             0.23
+// @version             0.24
 // @description         Translate GitHub.com
 // @description:zh      GitHub汉化插件，包含人机翻译
 // @description:zh-CN   GitHub汉化插件，包含人机翻译
@@ -95,7 +95,10 @@
   }
 
   function shouldTranslateEl(el) {
-    const blockIds = ["readme"];
+    const blockIds = [
+		"readme"，
+		"file-name-editor-breadcrumb", "StickyHeader" // fix repo详情页文件路径breadcrumb
+	];
     const blockClass = [
       "CodeMirror",
       "js-navigation-container", // 过滤文件目录
@@ -104,7 +107,10 @@
       // "text-normal", // 过滤repo name, 复现：https://github.com/search?q=explore
       "repo-list",//过滤搜索结果项目,解决"text-normal"导致的有些文字不翻译的问题,搜索结果以后可以考虑单独翻译
       "js-path-segment","final-path", //过滤目录,文件位置栏
-      "markdown-body" // 过滤wiki页面
+      "markdown-body" // 过滤wiki页面,
+	  "search-input-container", //搜索框
+      "search-match", //fix搜索结果页,repo name被翻译
+      "cm-editor", //代码编辑框
     ];
     const blockTags = ["CODE", "SCRIPT", "LINK", "IMG", "svg", "TABLE", "ARTICLE", "PRE"];
     const blockItemprops = ["name"];
