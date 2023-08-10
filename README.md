@@ -19,7 +19,7 @@ GitHub.com 国际化插件。原链接：https://forum.githubs.cn/topic/5
 ![screenshot1](./images/screenshot1.png)
 
 ## 贡献
-该插件由[GitHub中文社区](https://www.githubs.cn/)提供，目前只翻译了部分常用词条，欢迎补充完善，中文词条在`locales/zh-CN.js`目录中。大家在补充完善的过程，请依据[GitHub 词汇表](https://docs.github.com/en/github/getting-started-with-github/github-glossary)的官方译本对相关术语进行翻译，如有意见和疑问请到[原文](https://forum.githubs.cn/topic/5/)下留言。
+该插件由[GitHub中文社区](https://www.github-zh.com/)提供，目前只翻译了部分常用词条，欢迎补充完善，中文词条在`locales/zh-CN.js`目录中。大家在补充完善的过程，请依据[GitHub 词汇表](https://docs.github.com/en/github/getting-started-with-github/github-glossary)的官方译本对相关术语进行翻译，如有意见和疑问请到<del>[原文](https://forum.githubs.cn/topic/5/)</del>下留言。
 
 
 
