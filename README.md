@@ -1,5 +1,5 @@
 # github-i18n-plugin
-GitHub.com 国际化插件。原链接：https://forum.githubs.cn/topic/5
+GitHub.com 国际化插件。原链接：<del>https://forum.githubs.cn/topic/5</del>
 
 ## 功能
 - 汉化GitHub菜单栏，标题，按钮等公共组件
