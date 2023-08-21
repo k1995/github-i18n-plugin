@@ -1,5 +1,6 @@
+> 【GitHub中文社区】域名原域名githubs.cn变更为了 [https://github-zh.com](https://www.github-zh.com)
 # github-i18n-plugin
-GitHub.com 国际化插件。原链接：<del>https://forum.githubs.cn/topic/5</del>
+GitHub.com 国际化插件。原链接：https://forum.github-zh.com/topic/5
 
 ## 功能
 - 汉化GitHub菜单栏，标题，按钮等公共组件
