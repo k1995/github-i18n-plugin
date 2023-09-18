@@ -186,6 +186,9 @@
     "no recovery tokens": "未设置恢复令牌",
 
     "__comments-6": "User home",
+    "filter": "过滤",
+    "send feedback": "发送反馈",
+    "latest changes": "最近更新",
     "signed in as": "登录身份为",
     "set status": "状态设置",
     "new repository": "新建仓库",
@@ -1815,6 +1818,11 @@
 
     "Extend GitHub": "拓展GitHub",
     "Find tools to improve your workflow": "寻找改进工作流程的工具",
+
+    "__comments_homepage": "首页翻译",
+    "product": "产品",
+    "solutions": "解决方案",
+    "open source": "开源项目",
 
     "__dict-end": "end"
   }

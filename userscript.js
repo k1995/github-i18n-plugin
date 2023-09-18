@@ -3,7 +3,7 @@
 // @name:zh-CN          GitHub汉化插件
 // @name:ja             GitHub日本語
 // @namespace           https://github.com/k1995/github-i18n-plugin/
-// @version             0.26
+// @version             0.27
 // @description         Translate GitHub.com
 // @description:zh      GitHub汉化插件，包含人机翻译
 // @description:zh-CN   GitHub汉化插件，包含人机翻译
@@ -13,7 +13,7 @@
 // @match               https://gist.github.com/*
 // @grant               GM_xmlhttpRequest
 // @grant               GM_getResourceText
-// @resource            zh-CN https://www.github-zh.com/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/zh-CN.json?v=20220131
+// @resource            zh-CN https://www.github-zh.com/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/zh-CN.json?v=20230918
 // @resource            ja https://www.githubs.cn/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/ja.json
 // @require             https://cdn.staticfile.org/timeago.js/4.0.2/timeago.min.js
 // @require             https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js
@@ -28,13 +28,14 @@
   const locales = getLocales(lang)
 
   translateByCssSelector();
+  translateTime();
   traverseElement(document.body);
   watchUpdate();
 
   // 翻译描述
   if(window.location.pathname.split('/').length == 3) {
-    translateDesc(".repository-content .f4"); //仓库简介翻译
-    translateDesc(".gist-content [itemprop='about']"); // Gist 简介翻译
+    //translateDesc(".repository-content .f4"); //仓库简介翻译
+    //translateDesc(".gist-content [itemprop='about']"); // Gist 简介翻译
   }
 
 
@@ -52,8 +53,12 @@
   }
 
   function translateRelativeTimeEl(el) {
-    const datetime = $(el).attr('datetime');
-    //$(el).text(timeago.format(datetime, lang.replace('-', '_')));
+    if(!$(el).attr('translated')) {
+        const datetime = $(el).attr('datetime');
+        $(el).attr('translated', true);
+        let humanTime = timeago.format(datetime, lang.replace('-', '_'));
+        el.shadowRoot.textContent = humanTime;
+    }
   }
 
   function translateElement(el) {
@@ -167,11 +172,6 @@
     }
 
     for (const child of el.childNodes) {
-      if (["RELATIVE-TIME", "TIME-AGO"].includes(el.tagName)) {
-        translateRelativeTimeEl(el);
-        return;
-      }
-
       if (child.nodeType === Node.TEXT_NODE) {
         translateElement(child);
       }
@@ -230,7 +230,7 @@
 
       GM_xmlhttpRequest({
         method: "GET",
-        url: `https://www.githubs.cn/translate?q=`+ encodeURIComponent(desc),
+        url: `https://www.github-zh.com/translate?q=`+ encodeURIComponent(desc),
         onload: function(res) {
           if (res.status === 200) {
             $("#translate-me").hide();
@@ -259,5 +259,11 @@
         }
       }
     }
+  }
+
+  function translateTime() {
+    $("relative-time").each(function() {
+      translateRelativeTimeEl(this);
+    })
   }
 })();
