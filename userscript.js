@@ -117,6 +117,7 @@
       "search-match", //fix搜索结果页,repo name被翻译
       "cm-editor", //代码编辑框
       "PRIVATE_TreeView-item", // 文件树
+      "repo", // 项目名称
     ];
     const blockTags = ["CODE", "SCRIPT", "LINK", "IMG", "svg", "TABLE", "ARTICLE", "PRE"];
     const blockItemprops = ["name"];
