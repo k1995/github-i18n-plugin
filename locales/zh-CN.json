@@ -1824,17 +1824,17 @@
     "solutions": "解决方案",
     "open source": "开源项目",
 
-    "GitHub Docs": "GitHub 文档",
-    "GitHub Support": "GitHub 帮助",
-    "Your sponsors":"我的赞助",
-    "Your enterprises":"我的企业",
-    "Code, planning, and automation":"代码、规划和自动化",
-    "Pages":"页面",
-    "Social accounts":"社交账号",
-    "Make profile private and hide activity":"将个人资料设为仅自己可见并隐藏动态",
-    "Build and deployment":"构建和部署",
-    "Deploy keys":"配置秘钥",
-    "Secrets and variables":"秘钥和变量",
+    "github docs": "github 文档",
+    "github support": "github 帮助",
+    "your sponsors":"我的赞助",
+    "your enterprises":"我的企业",
+    "code, planning, and automation":"代码、规划和自动化",
+    "pages":"页面",
+    "social accounts":"社交账号",
+    "make profile private and hide activity":"将个人资料设为仅自己可见并隐藏动态",
+    "build and deployment":"构建和部署",
+    "deploy keys":"配置秘钥",
+    "secrets and variables":"秘钥和变量",
 
     "__dict-end": "end"
   }
