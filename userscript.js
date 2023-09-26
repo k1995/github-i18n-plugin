@@ -14,7 +14,7 @@
 // @grant               GM_xmlhttpRequest
 // @grant               GM_getResourceText
 // @resource            zh-CN https://www.github-zh.com/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/zh-CN.json?v=20230918
-// @resource            ja https://www.githubs.cn/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/ja.json
+// @resource            ja https://www.github-zh.com/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/ja.json
 // @require             https://cdn.staticfile.org/timeago.js/4.0.2/timeago.min.js
 // @require             https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js
 // @license MIT
@@ -34,8 +34,8 @@
 
   // 翻译描述
   if(window.location.pathname.split('/').length == 3) {
-    //translateDesc(".repository-content .f4"); //仓库简介翻译
-    //translateDesc(".gist-content [itemprop='about']"); // Gist 简介翻译
+    translateDesc(".repository-content .f4"); //仓库简介翻译
+    translateDesc(".gist-content [itemprop='about']"); // Gist 简介翻译
   }
 
 
@@ -229,15 +229,35 @@
         return;
       }
 
+      let lang = (navigator.userLanguage || navigator.language).toLowerCase();
+      let data_json = {
+        header: {
+          fn: "auto_translation"
+        },
+        type: "plain",
+        source: {
+          text_list: [
+            desc
+          ]
+        },
+        target: {
+          lang: lang == "zh-cn" ? "zh" : lang
+        }
+      }
       GM_xmlhttpRequest({
-        method: "GET",
-        url: `https://www.github-zh.com/translate?q=`+ encodeURIComponent(desc),
+        method: "POST",
+        url: "https://transmart.qq.com/api/imt",
+        header: {
+          "content-type": "application/json"
+        },
+        responseType: "json",
+        data: JSON.stringify(data_json),
         onload: function(res) {
-          if (res.status === 200) {
+          const json = JSON.parse(res.responseText)
+          if (res.status === 200 && json?.header?.ret_code == "succ") {
             $("#translate-me").hide();
-            // render result
-            const text = res.responseText;
-            $(el).append("<span style='font-size: small'>由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://www.githubs.cn'>GitHub中文社区</a> 翻译👇</span>");
+            const text = json.auto_translation.join(" ");
+            $(el).append("<span style='font-size: small; display:inline-block; padding: 3px 5px; background-color: #F6F8FA; border-radius: 3px'>以下 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://transmart.qq.com/'>翻译</a> 由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://www.github-zh.com/'>GitHub中文社区</a> 增加</span>");
             $(el).append("<br/>");
             $(el).append(text);
           } else {
