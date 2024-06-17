@@ -13,7 +13,7 @@
 // @match               https://gist.github.com/*
 // @grant               GM_xmlhttpRequest
 // @grant               GM_getResourceText
-// @resource            zh-CN https://www.github-zh.com/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/zh-CN.json?v=20230918
+// @resource            zh-CN https://www.github-zh.com/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/zh-CN.json?v=20240617
 // @resource            ja https://www.github-zh.com/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/ja.json
 // @require             https://cdn.staticfile.org/timeago.js/4.0.2/timeago.min.js
 // @require             https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js
@@ -53,11 +53,12 @@
   }
 
   function translateRelativeTimeEl(el) {
-    if(!$(el).attr('translated')) {
-        const datetime = $(el).attr('datetime');
-        $(el).attr('translated', true);
-        let humanTime = timeago.format(datetime, lang.replace('-', '_'));
-        el.shadowRoot.textContent = humanTime;
+    const datetime = $(el).attr('datetime');
+    let humanTime = timeago.format(datetime, lang.replace('-', '_'));
+    if(el.shadowRoot) {
+      el.shadowRoot.textContent = humanTime;
+    } else {
+      el.textContent = humanTime;
     }
   }
 
@@ -101,8 +102,8 @@
 
   function shouldTranslateEl(el) {
     const blockIds = [
-	"readme",
-	"file-name-editor-breadcrumb", "StickyHeader" // fix repo详情页文件路径breadcrumb
+	  "readme",
+	  "file-name-editor-breadcrumb", "StickyHeader" // fix repo详情页文件路径breadcrumb
     ];
     const blockClass = [
       "CodeMirror",
@@ -111,15 +112,15 @@
       "topic-tag", // 过滤标签,
       // "text-normal", // 过滤repo name, 复现：https://github.com/search?q=explore
       "repo-list",//过滤搜索结果项目,解决"text-normal"导致的有些文字不翻译的问题,搜索结果以后可以考虑单独翻译
-      "js-path-segment","final-path", //过滤目录,文件位置栏
+      "js-path-segment","final-path", "react-tree-show-tree-items", //过滤目录,文件位置栏
       "markdown-body", // 过滤wiki页面,
       "search-input-container", //搜索框
       "search-match", //fix搜索结果页,repo name被翻译
-      "cm-editor", //代码编辑框
+      "cm-editor", "react-code-lines", //代码编辑框
       "PRIVATE_TreeView-item", // 文件树
       "repo", // 项目名称
     ];
-    const blockTags = ["CODE", "SCRIPT", "LINK", "IMG", "svg", "TABLE", "ARTICLE", "PRE"];
+    const blockTags = ["CODE", "SCRIPT", "LINK", "IMG", "svg", "TABLE", "PRE"];
     const blockItemprops = ["name"];
 
     if (blockTags.includes(el.tagName)) {
@@ -200,6 +201,7 @@
       }
       if(reTrans) {
           traverseElement(document.body);
+          translateTime();
       }
     });
 
