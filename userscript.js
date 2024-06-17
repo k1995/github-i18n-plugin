@@ -35,7 +35,7 @@
   // 翻译描述
   if(window.location.pathname.split('/').length == 3) {
     translateDesc(".repository-content .f4"); //仓库简介翻译
-    translateDesc(".gist-content [itemprop='about']"); // Gist 简介翻译
+    // translateDesc(".gist-content [itemprop='about']"); // Gist 简介翻译
   }
 
 
@@ -246,23 +246,20 @@
           lang: lang == "zh-cn" ? "zh" : lang
         }
       }
+      const repoId = $("input[name=repository_id]").val();
       GM_xmlhttpRequest({
-        method: "POST",
-        url: "https://transmart.qq.com/api/imt",
-        header: {
-          "content-type": "application/json"
-        },
-        responseType: "json",
-        data: JSON.stringify(data_json),
-        onload: function(res) {
-          const json = JSON.parse(res.responseText)
-          if (res.status === 200 && json?.header?.ret_code == "succ") {
+        method: "GET",
+        url: `https://www.github-zh.com/translate?i=${repoId}&q=`+ encodeURIComponent(desc),
+        onload: function(rsp) {
+          if (rsp.status === 200) {
             $("#translate-me").hide();
-            const text = json.auto_translation.join(" ");
-            $(el).append("<span style='font-size: small; display:inline-block; padding: 3px 5px; background-color: #F6F8FA; border-radius: 3px'>以下 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://transmart.qq.com/'>翻译</a> 由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://www.github-zh.com/'>GitHub中文社区</a> 增加</span>");
-            $(el).append("<br/>");
-            $(el).append(text);
+            // render result
+            const text = rsp.responseText;
+            $(".repository-content .f4").append("<span style='font-size: small'>由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://www.githubs.cn'>GitHub中文社区</a> 翻译👇</span>");
+            $(".repository-content .f4").append("<br/>");
+            $(".repository-content .f4").append(text);
           } else {
+            console.error("仓库描述翻译失败:", rsp)
             alert("翻译失败");
           }
         }
