@@ -102,8 +102,8 @@
 
   function shouldTranslateEl(el) {
     const blockIds = [
-	  "readme",
-	  "file-name-editor-breadcrumb", "StickyHeader" // fix repo详情页文件路径breadcrumb
+      "readme",
+      "file-name-editor-breadcrumb", "StickyHeader" // fix repo详情页文件路径breadcrumb
     ];
     const blockClass = [
       "CodeMirror",
@@ -119,8 +119,15 @@
       "cm-editor", "react-code-lines", //代码编辑框
       "PRIVATE_TreeView-item", // 文件树
       "repo", // 项目名称
-      "list-style-none",//仓库语言
     ];
+    /**
+     * 过滤dom属性
+     * key是属性,val是对应值（会转为正则匹配，所以不需要完全一致，包含一部分特定文字就可以）
+     */
+    const attrMap = [
+      // 仓库语言,不需要翻译
+      { key: 'data-ga-click', val: 'language stats search click' },
+    ]
     const blockTags = ["CODE", "SCRIPT", "LINK", "IMG", "svg", "TABLE", "PRE"];
     const blockItemprops = ["name"];
 
@@ -150,7 +157,22 @@
           }
         }
       }
+      
+      // 过滤属性 
+      let some = attrMap.some(x => {
+        let itemprops = el.getAttribute(x.key);
+        if (itemprops) {
+          // 转换为正则表达式（将目标字符串中的特殊字符进行转义。）
+          const reg = new RegExp(x.val.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+          // 匹配
+          return itemprops.match(reg)
+        }
+      })
+      // 要忽略的只要有一个满足就不翻译
+      if (some) { return false }
+
     }
+
 
     return true;
   }
@@ -201,8 +223,8 @@
         }
       }
       if(reTrans) {
-          traverseElement(document.body);
-          translateTime();
+        traverseElement(document.body);
+        translateTime();
       }
     });
 
