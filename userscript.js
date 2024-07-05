@@ -119,6 +119,7 @@
       "cm-editor", "react-code-lines", //代码编辑框
       "PRIVATE_TreeView-item", // 文件树
       "repo", // 项目名称
+      "list-style-none",//仓库语言
     ];
     const blockTags = ["CODE", "SCRIPT", "LINK", "IMG", "svg", "TABLE", "PRE"];
     const blockItemprops = ["name"];
