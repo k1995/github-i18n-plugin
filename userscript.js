@@ -103,7 +103,7 @@
   function shouldTranslateEl(el) {
     const blockIds = [
 	  "readme",
-	  "file-name-editor-breadcrumb", "StickyHeader" // fix repo详情页文件路径breadcrumb
+	  "file-name-editor-breadcrumb", "StickyHeader", "sticky-file-name-id", "sticky-breadcrumb" // fix repo详情页文件路径breadcrumb
     ];
     const blockClass = [
       "CodeMirror",
