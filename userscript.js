@@ -15,8 +15,8 @@
 // @grant               GM_getResourceText
 // @resource            zh-CN https://www.github-zh.com/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/zh-CN.json?v=20240617
 // @resource            ja https://www.github-zh.com/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/ja.json
-// @require             https://cdn.staticfile.org/timeago.js/4.0.2/timeago.min.js
-// @require             https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js
+// @require             https://s4.zstatic.net/ajax/libs/timeago.js/4.0.2/timeago.min.js#sha256-sTurDi2etLN9CpnUIoCC9y5iynb2qr/uo6QJqzoO7mA=
+// @require             https://s4.zstatic.net/ajax/libs/jquery/3.4.1/jquery.min.js#sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=
 // @license MIT
 // ==/UserScript==
 
