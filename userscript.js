@@ -3,7 +3,7 @@
 // @name:zh-CN          GitHub汉化插件
 // @name:ja             GitHub日本語
 // @namespace           https://github.com/k1995/github-i18n-plugin/
-// @version             0.30
+// @version             0.31
 // @description         Translate GitHub.com
 // @description:zh      GitHub汉化插件，包含人机翻译
 // @description:zh-CN   GitHub汉化插件，包含人机翻译
@@ -15,8 +15,8 @@
 // @grant               GM_getResourceText
 // @resource            zh-CN https://www.github-zh.com/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/zh-CN.json?v=20240617
 // @resource            ja https://www.github-zh.com/raw-githubusercontent/k1995/github-i18n-plugin/master/locales/ja.json
-// @require             https://cdn.staticfile.org/timeago.js/4.0.2/timeago.min.js
-// @require             https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js
+// @require             https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js
+// @require             https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
 // @license MIT
 // ==/UserScript==
 
@@ -246,7 +246,7 @@
           lang: lang == "zh-cn" ? "zh" : lang
         }
       }
-      const repoId = $("input[name=repository_id]").val();
+      const repoId = $("meta[name=octolytics-dimension-repository_id]").attr('content');
       GM_xmlhttpRequest({
         method: "GET",
         url: `https://www.github-zh.com/translate?i=${repoId}&q=`+ encodeURIComponent(desc),
@@ -255,7 +255,7 @@
             $("#translate-me").hide();
             // render result
             const text = rsp.responseText;
-            $(".repository-content .f4").append("<span style='font-size: small'>由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://www.githubs.cn'>GitHub中文社区</a> 翻译👇</span>");
+            $(".repository-content .f4").append("<span style='font-size: small'>由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://www.github-zh.com'>GitHub中文社区</a> 翻译👇</span>");
             $(".repository-content .f4").append("<br/>");
             $(".repository-content .f4").append(text);
           } else {
